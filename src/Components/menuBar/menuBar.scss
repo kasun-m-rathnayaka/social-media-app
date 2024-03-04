@@ -1,0 +1,63 @@
+@import "../../style.scss";
+
+.menuBar {
+  @include themify($themes) {
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    flex: 3;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+          width: 30px;
+          border-radius: 50%;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+      hr {
+        margin: 15px 5px;
+        border: 1px solid themed("border");
+      }
+      span {
+        font-size: small;
+        margin-bottom: 4px;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+          width: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

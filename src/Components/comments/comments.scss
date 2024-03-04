@@ -1,0 +1,73 @@
+@import "../../style.scss";
+
+.comments {
+  @include themify($themes) {
+    .write {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      input {
+        flex: 5;
+        padding: 10px;
+        border: 1px solid themed("border");
+        background-color: transparent;
+        color: themed("textColor");
+      }
+
+      button {
+        border: none;
+        background-color: #5271ff;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0px;
+
+      .image {
+        flex: 1;
+        img {
+          height: 40px;
+          width: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .desc {
+        flex: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+
+        span {
+          font-weight: 500;
+        }
+
+        p {
+          font-size: 13px;
+          color: themed("textColorSoft");
+        }
+      }
+      .date {
+        align-self: center;
+        flex: 2;
+        color: lightgray;
+        font-size: small;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 4;
+    position: sticky;
+    top: 50px;
+    height: calc(102vh - 80px);
+    padding: 10px;
+    background-color: themed("bgSoft");
+    color: themed("textColor");
+    overflow: scroll;
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      span {
+        color: themed("textColorSoft");
+        font-size: small;
+      }
+      .item {
+        background-color: themed("bg");
+        color: themed("textColor");
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 5px;
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            img {
+              width: 30px;
+              border-radius: 50%;
+            }
+            span {
+            }
+            p {
+              font-size: 11px;
+              color: themed("textColorSoft");
+            }
+            .online {
+              width: 10px;
+              height: 10px;
+              background-color: limegreen;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              left: 20px;
+            }
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            button {
+              color: white;
+              cursor: pointer;
+              border-radius: 3px;
+              border: none;
+              padding: 5px;
+
+              &:first-child {
+                background-color: rgb(15, 95, 170);
+              }
+              &:last-child {
+                background-color: rgb(170, 15, 36);
+              }
+            }
+          }
+          .activity {
+            font-size: 11px;
+            color: rgb(99, 97, 97);
+          }
+        }
+      }
+    }
+  }
+}
