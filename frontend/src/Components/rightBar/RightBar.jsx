@@ -9,8 +9,8 @@ const RightBar = () => {
           <span>Sugessted for you</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <span>Shehani</span>
+              <img src="assests/person.png" />
+              <span>Sandun</span>
             </div>
             <div className="buttons">
               <button>follow</button>
@@ -19,8 +19,8 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <span>Shehani</span>
+              <img src="assests/person2.png" />
+              <span>Charith</span>
             </div>
             <div className="buttons">
               <button>follow</button>
@@ -32,30 +32,37 @@ const RightBar = () => {
           <span>Laterst Activities</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <span>Shehani</span>
-              <p>poked you with a friend request</p>
+              <img src="assests/person3.png" />
+              <span>Imasha</span>
+              <p>has a job oppotunity for you</p>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person.png" />
               <span>Shehani</span>
-              <p>poked you with a friend request</p>
+              <p>has given you a 3 star reviwe</p>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person2.png" />
               <span>Shehani</span>
-              <p>poked you with a friend request</p>
+              <p>has updated her proposal</p>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person3.png" />
+              <span>Imasha</span>
+              <p>has a job oppotunity for you</p>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userInfo">
+              <img src="assests/person.png" />
               <span>Shehani</span>
-              <p>poked you with a friend request</p>
+              <p>has given you a 3 star reviwe</p>
             </div>
           </div>
         </div>
@@ -63,7 +70,7 @@ const RightBar = () => {
           <span>Online friends</span>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person.png" />
               <div className="online" />
               <span>Shehani</span>
               <p>is live</p>
@@ -71,7 +78,23 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person2.png" />
+              <div className="online" />
+              <span>Kasun</span>
+              <p>is live</p>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userInfo">
+              <img src="assests/person3.png" />
+              <div className="online" />
+              <span>Kavindu</span>
+              <p>is live</p>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userInfo">
+              <img src="assests/person.png" />
               <div className="online" />
               <span>Shehani</span>
               <p>is live</p>
@@ -79,7 +102,23 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person2.png" />
+              <div className="online" />
+              <span>Kasun</span>
+              <p>is live</p>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userInfo">
+              <img src="assests/person3.png" />
+              <div className="online" />
+              <span>Kavindu</span>
+              <p>is live</p>
+            </div>
+          </div>
+          <div className="user">
+            <div className="userInfo">
+              <img src="assests/person.png" />
               <div className="online" />
               <span>Shehani</span>
               <p>is live</p>
@@ -87,49 +126,17 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person2.png" />
               <div className="online" />
-              <span>Shehani</span>
+              <span>Kasun</span>
               <p>is live</p>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
+              <img src="assests/person3.png" />
               <div className="online" />
-              <span>Shehani</span>
-              <p>is live</p>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <div className="online" />
-              <span>Shehani</span>
-              <p>is live</p>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <div className="online" />
-              <span>Shehani</span>
-              <p>is live</p>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <div className="online" />
-              <span>Shehani</span>
-              <p>is live</p>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-              <div className="online" />
-              <span>Shehani</span>
+              <span>Kavindu</span>
               <p>is live</p>
             </div>
           </div>

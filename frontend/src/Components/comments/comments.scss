@@ -20,6 +20,7 @@
         border: 1px solid themed("border");
         background-color: transparent;
         color: themed("textColor");
+        border-radius: 10px;
       }
 
       button {
@@ -52,6 +53,7 @@
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
+        padding-left: 20px;
 
         span {
           font-weight: 500;

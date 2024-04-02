@@ -4,8 +4,8 @@
   @include themify($themes) {
     flex: 4;
     position: sticky;
-    top: 50px;
-    height: calc(102vh - 80px);
+    top: 40px;
+    height: calc(102vh - 70px);
     padding: 10px;
     background-color: themed("bgSoft");
     color: themed("textColor");
@@ -31,7 +31,7 @@
         background-color: themed("bg");
         color: themed("textColor");
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        border-radius: 5px;
+        border-radius: 15px;
         margin-bottom: 20px;
         padding: 10px;
         display: flex;
@@ -74,15 +74,15 @@
             button {
               color: white;
               cursor: pointer;
-              border-radius: 3px;
+              border-radius: 10px;
               border: none;
-              padding: 5px;
+              padding: 8px;
 
               &:first-child {
-                background-color: rgb(15, 95, 170);
+                background-color: #2980b9;
               }
               &:last-child {
-                background-color: rgb(170, 15, 36);
+                background-color: #e74c3c;
               }
             }
           }

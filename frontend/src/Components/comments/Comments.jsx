@@ -1,50 +1,74 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./comments.scss";
 import { AuthContext } from "../../context/AuthContext";
+import axios from "axios";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+  useMutationState,
+} from "@tanstack/react-query";
+import moment from "moment";
 
-const Comments = () => {
+const Comments = ({ postId }) => {
   const { user } = useContext(AuthContext);
-  const comments = [
-    {
-      id: 1,
-      name: "shehani",
-      userId: 1,
-      profilePic:
-        "https://images.unsplash.com/photo-1596434300655-e48d3ff3dd5e?q=80&w=1386&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      desc: "In a futuristic Western-themed amusement park, Westworld, the visitors interact with automatons. ",
-      image:
-        "https://images.unsplash.com/photo-1709113646175-dac6673b88f7?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  const [desc, setDesc] = useState();
+  const queryClient = useQueryClient();
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["comments"],
+    queryFn: () =>
+      axios
+        .get("http://localhost:3001/api/comments?postId=" + postId)
+        .then((res) => {
+          return res.data;
+        }),
+  });
+
+  const mutation = useMutation({
+    mutationFn: async (newComment) => {
+      await axios.post("http://localhost:3001/api/addcomment", newComment);
     },
-    {
-      id: 2,
-      name: "kasun",
-      userId: 1,
-      profilePic:
-        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      desc: "In a futuristic Western-themed amusement park, Westworld, the visitors interact with automatons. In a futuristic Western-themed amusement park, Westworld, the visitors interact with automatons.",
-      image:
-        "https://images.unsplash.com/photo-1709082804530-d588656ade88?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries();
     },
-  ];
+  });
+  const handleClick = async (e) => {
+    e.preventDefault();
+    await mutation.mutate({ desc, user, postId });
+    setDesc("");
+  };
+  console.log(mutation.error);
+
   return (
     <div className="comments">
       <div className="write">
-        <img src={user.profilePic} alt="" />
-        <input type="text" placeholder="write a comment" />
-        <button>Send</button>
+        <img src={user.profilepic} alt="" />
+        <input
+          type="text"
+          placeholder="write a comment"
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+        <button onClick={handleClick}>Send</button>
       </div>
-      {comments.map((item) => (
-        <div key={item.id} className="item">
-          <div className="image">
-            <img src={item.profilePic} />
-          </div>
-          <div className="desc">
-            <div>{item.name}</div>
-            <p>{item.desc}</p>
-          </div>
-          <div className="date">5 mins ago</div>
-        </div>
-      ))}
+      {isPending
+        ? "loading"
+        : data.map((item) => (
+            <div key={item.id} className="item">
+              <div className="image">
+                <img src={item.profilepic} />
+              </div>
+              <div className="desc">
+                <div>{item.name}</div>
+                <p>{item.desc}</p>
+              </div>
+              <div className="date">{moment(item.createdAt).fromNow()}</div>
+            </div>
+          ))}
     </div>
   );
 };

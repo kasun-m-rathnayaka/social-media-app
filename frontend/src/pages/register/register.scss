@@ -11,7 +11,7 @@
 
   .card {
     display: flex;
-    width: 50%;
+    width: 60%;
     background-color: white;
     border-radius: 10px;
     min-height: 400px;
@@ -20,6 +20,7 @@
     .left {
       flex: 1;
       padding: 40px;
+      width: 50%;
       color: white;
       background-image: linear-gradient(
           rgba(160, 19, 160, 0.219),

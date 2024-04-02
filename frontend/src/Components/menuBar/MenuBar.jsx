@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./menuBar.scss";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const MenuBar = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="menuBar">
       <div className="container">
         <div className="user">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&usqp=CAU" />
-          <span>Shehani</span>
+          <img src={user.profilepic} />
+          <span style={{ fontWeight: "600" }}>{user.name}</span>
         </div>
         <div className="item">
           <img src="assests/friends.png" />
-          <span>Friends</span>
+          <span>Your Friends</span>
         </div>
         <div className="item">
-          <img src="assests/groups.jpeg" />
-          <span>Groups</span>
+          <img src="assests/groups.png" />
+          <span>Your Groups</span>
         </div>
         <div className="item">
           <img src="assests/market.png" />
@@ -23,30 +27,32 @@ const MenuBar = () => {
         </div>
         <div className="item">
           <img src="assests/clock.png" />
-          <span>Memories</span>
+          <span>My Memories</span>
         </div>
         <div className="item">
           <img src="assests/watch.jpeg" />
-          <span>Watch</span>
+          <span>Watch Now</span>
         </div>
         <hr />
-        <span>Your shortcuts</span>
+        <span className="topic">Your shortcuts</span>
         <div className="item">
           <img src="assests/events.png" />
-          <span>Events</span>
-        </div>
-        <div className="item">
-          <img src="assests/gaming.png" />
-          <span>Watch</span>
+          <span>Reacent Events</span>
         </div>
         <div className="item">
           <img src="assests/gallery.jpeg" />
-          <span>Gallery</span>
+          <span>Photo Gallery</span>
         </div>
         <div className="item">
           <img src="assests/messages.png" />
-          <span>Messages</span>
+          <span>New Messages</span>
         </div>
+        <Link to={"/login"} style={{ textDecoration: "none" }}>
+          <div className="item logout">
+            <img src="assests/logout.png" />
+            <span>Logout</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

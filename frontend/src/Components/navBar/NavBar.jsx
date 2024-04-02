@@ -19,16 +19,20 @@ const NavBar = () => {
   return (
     <div className="navBar">
       <div className="left">
-        <Link to={"/"} style={{ textDecoration: "none" }}>
-          <span className="icon">Social Media</span>
+        <Link to={"/"}>
+          <img src="assests/logo.png" />
         </Link>
-        <HomeRoundedIcon />
+        <Link to={"/"}>
+          <HomeRoundedIcon />
+        </Link>
         {darkMode ? (
           <LightModeRoundedIcon onClick={toggle} />
         ) : (
           <DarkModeRoundedIcon onClick={toggle} />
         )}
         <WidgetsRoundedIcon />
+      </div>
+      <div className="middle">
         <span className="search">
           <SearchRoundedIcon />
           <input type="text" placeholder="Search ..." />
@@ -39,7 +43,7 @@ const NavBar = () => {
         <EmailRoundedIcon />
         <NotificationsRoundedIcon />
         <div className="user">
-          <img src={user.profilePic} />
+          <img src={user.profilepic} />
           <span>{user.name}</span>
         </div>
       </div>

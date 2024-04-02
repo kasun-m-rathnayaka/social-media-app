@@ -10,7 +10,6 @@ root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <AuthContextProvider>
-
         <App />
       </AuthContextProvider>
     </DarkModeContextProvider>

@@ -1,23 +1,45 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./singlePost.scss";
 import { Link } from "react-router-dom";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
-import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import BookmarkAddRoundedIcon from "@mui/icons-material/BookmarkAddRounded";
 import Comments from "../comments/Comments";
+import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
+import moment from "moment";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+  useMutationState,
+} from "@tanstack/react-query";
+import axios from "axios";
+import { AuthContext } from "../../context/AuthContext";
 
 const SinglePost = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
-  //temp
+  const { user } = useContext(AuthContext);
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["likes"],
+    queryFn: () =>
+      axios
+        .get("http://localhost:3001/api/likes?postId=" + post.postId)
+        .then((res) => {
+          return res.data;
+        }),
+  });
   const liked = false;
 
   return (
     <div className="singlePost">
       <div className="user">
         <div className="userInfo">
-          <img src={post.profilePic} />
+          <img src={post.profilepic} />
           <div className="details">
             <Link
               to={`/profile/:${post.userId}`}
@@ -25,7 +47,7 @@ const SinglePost = ({ post }) => {
             >
               <span>{post.name}</span>
             </Link>
-            <span className="date">1 min ago</span>
+            <span className="date">{moment(post.createdAt).fromNow()}</span>
           </div>
         </div>
 
@@ -33,22 +55,30 @@ const SinglePost = ({ post }) => {
       </div>
       <div className="content">
         <p>{post.desc}</p>
-        <img src={post.image} />
+        <img src={"upload/" + post.img} />
       </div>
       <div className="info">
-        <div className="item">
-          {liked ? <FavoriteRoundedIcon /> : <FavoriteBorderRoundedIcon />}
-          <span>12 Likes</span>
+        <div className="left">
+          <div className="item">
+            {liked ? (
+              <FavoriteRoundedIcon style={{ color: "red" }} />
+            ) : (
+              <FavoriteBorderRoundedIcon />
+            )}
+            <span>{data}</span>
+          </div>
+          <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
+            <CommentRoundedIcon />
+          </div>
+          <div className="item">
+            <ShareRoundedIcon />
+          </div>
         </div>
-        <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
-          <CommentRoundedIcon />2
-        </div>
-        <div className="item">
-          <SendRoundedIcon />
-          <span>share</span>
+        <div className="right">
+          <BookmarkAddRoundedIcon />
         </div>
       </div>
-      {commentOpen && <Comments />}
+      {commentOpen && <Comments postId={post.postId} />}
     </div>
   );
 };

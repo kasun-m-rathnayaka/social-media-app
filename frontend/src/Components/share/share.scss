@@ -1,0 +1,92 @@
+@import "../../style.scss";
+
+.share {
+  @include themify($themes) {
+    margin: 0px 30px;
+    padding: 30px 30px;
+    color: themed("textColor");
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: themed("bg");
+    border-radius: 20px;
+
+    @include mobile {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        .left {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          input:focus {
+            outline: none;
+          }
+          input {
+            flex: 5;
+            padding: 10px;
+            border: 1px solid themed("border");
+            background-color: transparent;
+            color: themed("textColor");
+            border-radius: 10px;
+            width: 400px;
+          }
+        }
+        .right {
+          img {
+            width: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+          }
+        }
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        .left {
+          display: flex;
+          gap: 20px;
+
+          .item {
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+              width: 20px;
+            }
+          }
+        }
+        .right {
+          button {
+            flex: 5;
+            padding: 10px;
+            border: 1px solid themed("border");
+            background-color: transparent;
+            color: themed("textColor");
+            border-radius: 10px;
+          }
+          button:hover {
+            background-color: #5271ff;
+          }
+        }
+      }
+    }
+  }
+}

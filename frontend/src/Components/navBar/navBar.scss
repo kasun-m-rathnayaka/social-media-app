@@ -9,26 +9,33 @@
     align-items: center;
     justify-content: space-between;
     background-color: themed("bg");
-    color: themed("textColor");
+    color: themed("iconColor");
     z-index: 999;
+
     .left {
       display: flex;
       align-items: center;
       gap: 20px;
+      img {
+        width: 50px;
+      }
+
       Link {
         text-decoration: none;
       }
       .icon {
         font-weight: bold;
-        color: themed("logo");
       }
+    }
+    .middle {
       .search {
         display: flex;
         flex-direction: row;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 10px;
         border: 1px solid lightgray;
-        width: 300px;
+        width: 400px;
+        padding: 5px;
 
         @include mobile {
           display: none;
@@ -38,7 +45,7 @@
           border: none;
           color: themed("textColor");
           background: transparent;
-          width: 300px;
+          width: 1500px;
         }
         input:focus {
           outline: none;
@@ -58,7 +65,9 @@
         gap: 5px;
         font-weight: bold;
         img {
-          width: 30px;
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
           border-radius: 50%;
         }
       }
