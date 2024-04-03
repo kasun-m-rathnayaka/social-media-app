@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 })
 app.use(Express.json())
 app.use(cors(
-    { origin: ["https://genic.netlify.app", "http://localhost:3000"] }
+    { origin: "http://localhost:3000" }
 ))
 app.use(cookieParser())
 const upload = multer({ storage: storage })
