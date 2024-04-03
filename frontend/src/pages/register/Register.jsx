@@ -20,7 +20,10 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/api/auth/register", inputs);
+      await axios.post(
+        "https://social-media-app-ygkk.onrender.com/api/auth/register",
+        inputs
+      );
     } catch (error) {
       setErr(error.response.data);
     }

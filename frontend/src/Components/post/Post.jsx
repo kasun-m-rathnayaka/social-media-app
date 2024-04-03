@@ -11,7 +11,7 @@ const Post = ({ userId }) => {
     queryKey: ["posts"],
     queryFn: () =>
       axios
-        .get("http://localhost:3001/api/posts", {
+        .get("https://social-media-app-ygkk.onrender.com/api/posts", {
           params: user,
         })
         .then((res) => {

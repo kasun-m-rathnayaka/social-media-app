@@ -22,7 +22,7 @@ const Share = () => {
       const fromData = new FormData();
       fromData.append("file", file);
       const res = await axios.post(
-        "http://localhost:3001/api/upload",
+        "https://social-media-app-ygkk.onrender.com/api/upload",
         fromData
       );
       return res.data;
@@ -33,7 +33,10 @@ const Share = () => {
 
   const mutation = useMutation({
     mutationFn: async (newPost) => {
-      await axios.post("http://localhost:3001/api/post", newPost);
+      await axios.post(
+        "https://social-media-app-ygkk.onrender.com/api/post",
+        newPost
+      );
     },
     onSuccess: () => {
       // Invalidate and refetch
@@ -46,7 +49,6 @@ const Share = () => {
     let imageUrl = "";
     if (file) imageUrl = await upload();
     mutation.mutate({ desc, user, img: imageUrl });
-    // await axios.post("http://localhost:3001/api/post", { desc, user });
   };
 
   return (

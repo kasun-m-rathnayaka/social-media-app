@@ -28,7 +28,10 @@ const SinglePost = ({ post }) => {
     queryKey: ["likes"],
     queryFn: () =>
       axios
-        .get("http://localhost:3001/api/likes?postId=" + post.postId)
+        .get(
+          "https://social-media-app-ygkk.onrender.com/api/likes?postId=" +
+            post.postId
+        )
         .then((res) => {
           return res.data;
         }),

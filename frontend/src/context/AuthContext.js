@@ -7,7 +7,7 @@ export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
     const login = async (inputs) => {
-        const res = await axios.post("http://localhost:3001/api/auth/login", inputs, {
+        const res = await axios.post("https://social-media-app-ygkk.onrender.com/api/auth/login", inputs, {
             withCredentials: true,
         });
         setUser(res.data)
