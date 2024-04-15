@@ -28,10 +28,7 @@ const SinglePost = ({ post }) => {
     queryKey: ["likes"],
     queryFn: () =>
       axios
-        .get(
-          "https://social-media-app-ygkk.onrender.com/api/likes?postId=" +
-            post.postId
-        )
+        .get("http://localhost:3001/api/likes?postId=" + post.postId)
         .then((res) => {
           return res.data;
         }),
@@ -58,7 +55,7 @@ const SinglePost = ({ post }) => {
       </div>
       <div className="content">
         <p>{post.desc}</p>
-        <img src={"upload/" + post.img} />
+        {post.img && <img src={"upload/" + post.img} />}
       </div>
       <div className="info">
         <div className="left">

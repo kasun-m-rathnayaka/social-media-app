@@ -68,16 +68,12 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          cursor: pointer;
         }
       }
       .right {
         padding: 20px 10px;
-
-        .item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
+        cursor: pointer;
       }
     }
   }

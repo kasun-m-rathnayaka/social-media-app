@@ -21,10 +21,7 @@ const Comments = ({ postId }) => {
     queryKey: ["comments"],
     queryFn: () =>
       axios
-        .get(
-          "https://social-media-app-ygkk.onrender.com/api/comments?postId=" +
-            postId
-        )
+        .get("http://localhost:3001/api/comments?postId=" + postId)
         .then((res) => {
           return res.data;
         }),
@@ -32,10 +29,7 @@ const Comments = ({ postId }) => {
 
   const mutation = useMutation({
     mutationFn: async (newComment) => {
-      await axios.post(
-        "https://social-media-app-ygkk.onrender.com/api/addcomment",
-        newComment
-      );
+      await axios.post("http://localhost:3001/api/addcomment", newComment);
     },
     onSuccess: () => {
       // Invalidate and refetch

@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import KeyRoundedIcon from "@mui/icons-material/KeyRounded";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -9,7 +11,7 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const [err, setErr] = useState(null);
+  const [err, setErr] = useState();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -18,9 +20,10 @@ const Login = () => {
       await login(inputs);
       navigate("/");
     } catch (error) {
-      setErr(err);
+      setErr(error);
     }
   };
+  // console.log(err.response.data);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -30,35 +33,45 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello,</h1>
+          <div className="line"></div>
+          <h1>Login to Find a Job,</h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
-            velit, distinctio nisi totam dolor magni maxime dolorem quia quod
-            reiciendis est aliquid alias perferendis commodi a aut. Possimus,
-            pariatur ipsum.
+            Login to Genic to get your gateway to job opportunities. Connect,
+            apply, succeed. Join the Genic today!
           </p>
-          <span>Get an immersive experience</span>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
         </div>
         <div className="right">
-          <h1>Login</h1>
+          <h1>Log in</h1>
           <form>
-            <input
-              type="text"
-              placeholder="User Name"
-              name="username"
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={handleChange}
-            />
-
-            <button onClick={handleLogin}>Sign in</button>
+            <div className="input">
+              <EmailRoundedIcon />
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input">
+              <KeyRoundedIcon />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+              />
+            </div>
+            {err ? <div className="error"> {err.response.data}</div> : <span />}
+            <button onClick={handleLogin}>Log in</button>
+            <span>Fogot password ?</span>
+            <div className="or">or</div>
+            <img src="assests/google.png" alt="" srcset="" />
+            <div>
+              Don’t have an account ?
+              <Link to="/register" style={{ textDecoration: "none" }}>
+                <span> Sign Up</span>
+              </Link>
+            </div>
           </form>
         </div>
       </div>

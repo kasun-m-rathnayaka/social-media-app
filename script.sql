@@ -1,3 +1,4 @@
+create database social;
 use social;
 
 CREATE TABLE `users` (
@@ -86,6 +87,37 @@ CREATE TABLE `social`.`likes` (
 );
 
 select * from likes;
+SELECT * FROM users;
+INSERT INTO users (username,email,password,name) VALUES 'kasun', 'kasun@gmail.com', '$2a$10$rHzAw5lH.gHPitJ3lSG8je5EgmLw9cRmYrG.MLkOWErR0T3W.neTe', 'kasun';
+SELECT * FROM users WHERE username="kasun";
+select u.id as userId, name, profilepic, p.id as postId,p.desc,p.img from posts as p join users as u on(u.id = p.userId) left join relationships as r on (u.id = r.followedUser) where r.followerUser = 1 or p.userId = 1 order by p.createdAt desc;
+INSERT INTO posts(`desc`,`img`,`userId`,`createdAt`) VALUES ("postman","null","1","2021-02-1");
+INSERT INTO `social`.`posts`
+(`id`,
+`desc`,
+`img`,
+`userId`,
+`createdAt`)
+VALUES
+(<{id: }>,
+<{desc: }>,
+<{img: }>,
+<{userId: }>,
+<{createdAt: }>);
 
+select u.id as userId, name, profilepic, c.id as commentId,c.desc,c.createdAt from users as u join comments as c on(u.id = c.userId) where c.postId = 23 order by c.createdAt desc
 
+INSERT INTO `social`.`comments`
+(`id`,
+`desc`,
+`createdAt`,
+`userId`,
+`postId`)
+VALUES
+(<{id: }>,
+<{desc: }>,
+<{createdAt: }>,
+<{userId: }>,
+<{postId: }>);
 
+select id,userId from likes where (postId = 23)

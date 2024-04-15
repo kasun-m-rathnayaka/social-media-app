@@ -4,75 +4,99 @@
 
 .login {
   height: 100vh;
-  background-color: rgba(37, 182, 175, 0.466);
   display: flex;
-  align-items: center;
   justify-content: center;
 
   .card {
+    width: 100vw;
     display: flex;
-    width: 50%;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 400px;
+    flex-direction: row-reverse;
     overflow: hidden;
     .left {
       flex: 1;
       padding: 40px;
       color: white;
-      background-image: linear-gradient(
-          rgba(160, 19, 160, 0.219),
-          rgba(160, 19, 160, 0.582)
-        ),
-        url(https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      background-image: linear-gradient(#d9d9d923, #d9d9d92f),
+        url("../../../public/assests/img1.png");
       background-size: cover;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 10px;
+
       h1 {
         font-size: 90px;
       }
       p {
-      }
-      span {
-        font-size: small;
-      }
-      button {
-        width: 50%;
-        padding: 10px;
-        background-color: white;
-        border: none;
-        margin-top: 40px;
-        cursor: pointer;
-        font-weight: bold;
+        color: white;
       }
     }
     .right {
+      font-family: "Poppins", sans-serif;
       flex: 1;
       width: 50%;
-      padding: 40px;
+      padding: 7%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 50px;
       justify-content: center;
 
       form {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 30px;
-        input {
-          padding: 10px;
-          border: none;
-          border-bottom: 1px solid lightgray;
+        .input {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          width: 93%;
+          border: 0.5px solid #e0e2e9;
+          padding: 5px 20px;
+          border-radius: 8px;
+          input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+          }
+          input:focus {
+            outline: none;
+          }
         }
-        button {
-          width: 50%;
+        .error {
+          background-color: #f3d8da;
           padding: 10px;
-          background-color: rgba(37, 182, 175);
+          width: 96%;
+          text-align: center;
+          border: 1px solid #eca5aa;
+          border-radius: 8px;
+        }
+
+        button {
+          width: 100%;
+          padding: 15px;
+          background-color: #002549;
           color: white;
           border: none;
           cursor: pointer;
           font-weight: bold;
+          border-radius: 8px;
+        }
+
+        span {
+          color: #0062ff;
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+        }
+
+        .or {
+          color: gray;
+          font-size: small;
+        }
+
+        img {
+          cursor: pointer;
         }
       }
     }

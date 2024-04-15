@@ -9,10 +9,12 @@ const MenuBar = () => {
   return (
     <div className="menuBar">
       <div className="container">
-        <div className="user">
-          <img src={user.profilepic} />
-          <span style={{ fontWeight: "600" }}>{user.name}</span>
-        </div>
+        <Link to={"/profile/:" + user.id} style={{ textDecoration: "none" }}>
+          <div className="user">
+            <img src={user.profilepic} />
+            <span style={{ fontWeight: "600" }}>{user.name}</span>
+          </div>
+        </Link>
         <div className="item">
           <img src="assests/friends.png" />
           <span>Your Friends</span>

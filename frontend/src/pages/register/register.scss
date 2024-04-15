@@ -3,42 +3,27 @@
 }
 
 .register {
-  height: 100vh;
-  background-color: rgba(37, 182, 175, 0.466);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-family: "Poppins", sans-serif;
   .card {
     display: flex;
-    width: 60%;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 400px;
-    overflow: hidden;
-    flex-direction: row-reverse;
+    min-height: 100vh;
+    min-width: 100vw;
     .left {
-      flex: 1;
-      padding: 40px;
-      width: 50%;
       color: white;
-      background-image: linear-gradient(
-          rgba(160, 19, 160, 0.219),
-          rgba(160, 19, 160, 0.582)
-        ),
-        url(https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      flex: 0.7;
+      padding: 40px;
+      background-image: url("../../../public/assests/img3.png");
       background-size: cover;
       display: flex;
       flex-direction: column;
       gap: 10px;
+
       h1 {
-        font-size: 90px;
-        margin-bottom: 20px;
-      }
-      p {
-      }
-      span {
-        font-size: small;
+        size: 30px;
       }
       button {
         width: 50%;
@@ -51,31 +36,101 @@
       }
     }
     .right {
-      flex: 1;
-      width: 50%;
+      flex: 1.3;
       padding: 40px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       justify-content: center;
+      color: #2d3748;
+      font-size: 14px;
+      h1 {
+        font-weight: bold;
+        font-size: 40px;
+      }
+      p {
+        font-size: 17px;
+        color: #2d3748;
+      }
 
+      span {
+        color: #007aff;
+        cursor: pointer;
+      }
       form {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        input {
-          padding: 10px;
-          border: none;
-          border-bottom: 1px solid lightgray;
+        .fields {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          input {
+            border: none;
+            border: 0.5px solid #e0e2e9;
+            padding: 10px 20px;
+            border-radius: 8px;
+          }
+          input:focus {
+            outline: none;
+          }
         }
-        button {
-          width: 50%;
+        .checkbox {
+          input {
+            margin-right: 10px;
+            margin-bottom: 10px;
+          }
+        }
+        .error {
+          background-color: #f3d8da;
           padding: 10px;
-          background-color: rgba(37, 182, 175);
-          color: white;
-          border: none;
-          cursor: pointer;
-          font-weight: bold;
+          width: 95%;
+          color: black;
+
+          text-align: center;
+          border: 1px solid #eca5aa;
+          border-radius: 8px;
+          cursor: default;
+        }
+        .success {
+          background-color: #d8f3d8;
+          padding: 10px;
+          width: 95%;
+          color: black;
+          text-align: center;
+          border: 1px solid #a5ecba;
+          border-radius: 8px;
+          cursor: default;
+        }
+        .buttons {
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+          button {
+            width: 350px;
+            padding: 15px;
+            background-color: #002549;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+          }
+          .goolge {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #c8ccd8;
+            padding: 13px;
+            width: 350px;
+            border-radius: 8px;
+
+            img {
+              width: 20px;
+            }
+          }
         }
       }
     }

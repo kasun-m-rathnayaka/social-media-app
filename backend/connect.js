@@ -1,9 +1,9 @@
 import mysql from 'mysql'
 
 export const connection = mysql.createConnection({
-    host: 'social-application.cnqwi46ua7b7.eu-north-1.rds.amazonaws.com',
+    host: '127.0.0.1',
     user: 'admin',
-    password: 'kasunaws56',
+    password: 'root',
     database: 'social'
 })
 //admin
