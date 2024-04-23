@@ -29,20 +29,20 @@ To get started with this project, follow these steps:
    ```bash
    cd job-finding-app
    npm install
-
-3.Set up the database:
+   
+3. Set up the database:
 Create a SQL database and import the provided SQL schema.
 Configure the database connection in the backend (in a .env file or directly in the code).
 ```bash
 cd backend
 npm start
 ```
-4.Run the application:
+4. Run the application:
 ```bash
   cd frontend
   npm start
 ```
-5.Open your web browser and navigate to http://localhost:3000 to view the application.
+5. Open your web browser and navigate to http://localhost:3000 to view the application.
 
 License
 This project is licensed under the MIT License.
