@@ -27,7 +27,7 @@ To get started with this project, follow these steps:
 
 2. install dependencies:
    ```bash
-   cd job-finding-app
+   cd social-media-app
    npm install
    
 3. Set up the database:
@@ -37,9 +37,15 @@ Configure the database connection in the backend (in a .env file or directly in 
 cd backend
 npm start
 ```
-4. Run the application:
+4. Run the application frontend:
 ```bash
   cd frontend
+  npm start
+```
+
+4. Run the application backend:
+```bash
+  cd backend
   npm start
 ```
 5. Open your web browser and navigate to http://localhost:3000 to view the application.
