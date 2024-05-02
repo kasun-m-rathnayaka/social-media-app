@@ -101,8 +101,8 @@ const Register = () => {
                 <span>Log In</span>
               </Link>
             </p>
-            {err ? <span className="error"> {err}</span> : <span />}
-            {res ? <span className="success"> {res}</span> : <span />}
+            {/* {err ? <span className="error"> {err}</span> : <span />}
+            {res ? <span className="success"> {res}</span> : <span />} */}
           </form>
         </div>
       </div>
