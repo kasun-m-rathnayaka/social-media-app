@@ -46,6 +46,7 @@ const Share = () => {
     let imageUrl = "";
     if (file) imageUrl = await upload();
     mutation.mutate({ desc, user, img: imageUrl });
+    // console.log({ desc, user, img: imageUrl })
   };
 
   return (
@@ -53,7 +54,7 @@ const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
-            <img src={user.profilepic} />
+            <img src={"/upload/"+user.profilepic} />
             <input
               type="text"
               placeholder={`What's on your mind ${user.name}`}
@@ -74,16 +75,16 @@ const Share = () => {
             />
             <label htmlFor="file">
               <div className="item">
-                <img src="assests/img.png" />
+                <img src="/assests/img.png" />
                 <span>Add Image</span>
               </div>
             </label>
             <div className="item">
-              <img src="assests/location.webp" />
+              <img src="/assests/location.webp" />
               <span>Add Place</span>
             </div>
             <div className="item">
-              <img src="assests/friendsIco.png" />
+              <img src="/assests/friendsIco.png" />
               <span>Tag Friends</span>
             </div>
           </div>

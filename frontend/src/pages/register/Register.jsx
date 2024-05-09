@@ -91,7 +91,7 @@ const Register = () => {
               </div>
 
               <div className="goolge">
-                <img src="assests/google.webp" />
+                <img src="/assests/google.webp" />
                 Sign-in with google
               </div>
             </div>

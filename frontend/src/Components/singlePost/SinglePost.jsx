@@ -34,12 +34,13 @@ const SinglePost = ({ post }) => {
         }),
   });
   const liked = false;
+  // console.log("/upload/" + post.img)
 
   return (
     <div className="singlePost">
       <div className="user">
         <div className="userInfo">
-          <img src={post.profilepic} />
+          <img src={"/upload/"+post.profilepic} />
           <div className="details">
             <Link
               to={`/profile/:${post.userId}`}
@@ -55,7 +56,7 @@ const SinglePost = ({ post }) => {
       </div>
       <div className="content">
         <p>{post.desc}</p>
-        {post.img && <img src={"upload/" + post.img} />}
+        {post.img && <img src={"/upload/" + post.img} />}
       </div>
       <div className="info">
         <div className="left">

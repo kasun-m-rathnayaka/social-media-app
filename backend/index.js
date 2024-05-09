@@ -4,6 +4,7 @@ import commetRouter from "./routes/comments.js"
 import likesRouter from "./routes/likes.js"
 import postsRouter from "./routes/posts.js"
 import relationsRouter from "./routes/relations.js"
+import user from "./routes/user.js"
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { storage, uploadFiles } from "./routes/files.js";
@@ -29,6 +30,7 @@ app.use('/api', commetRouter)
 app.use('/api', likesRouter)
 app.use('/api', postsRouter)
 app.use('/api', relationsRouter)
+app.use('/api', user)
 
 app.listen(3001, () => {
     console.log('App listening on port 3001!');

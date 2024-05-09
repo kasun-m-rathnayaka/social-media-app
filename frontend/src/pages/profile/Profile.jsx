@@ -1,16 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./profile.scss";
 import Post from "../../Components/post/Post";
 import { AuthContext } from "../../context/AuthContext";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
+import Update from '../../Components/Update/Update'
 
 const Profile = () => {
   const { user } = new useContext(AuthContext);
-  console.log(user);
+  const [openUpdate,setOpenUpdate]=useState(false)
+
+  const userId = useLocation().pathname.split("/")[2]
+  
+  const { isPending, error, data } = useQuery({
+    queryKey: ["user"],
+    queryFn: () =>
+      axios
+        .get("http://localhost:3001/api/user/"+userId[1])
+        .then((res) => {
+          return res.data;
+        }),
+  });
+
+  // console.log("upload/" +user.profilepic)
+
   return (
     <div className="profile">
+      {isPending ? (<div>Loading</div>) : 
+      <>
       <div className="images">
-        <img src={user.coverpic} alt="" className="cover" />
-        <img src={user.profilepic} alt="" className="profilePic" />
+        <img src={"/upload/" +user.coverpic} alt="" className="cover" />
+        <img src={"/upload/" +user.profilepic} alt="" className="profilePic" />
       </div>
       <div className="profileContainer">
         <div className="uInfo">
@@ -18,13 +39,15 @@ const Profile = () => {
             <div className="info"></div>
             <span>{user.name}</span>
             <div className="desc">{user.desc}</div>
-            <button>follow</button>
+            {data && data.id == user.id ? (<button onClick={(e)=>setOpenUpdate(!openUpdate)}>Update</button>): <button>follow</button>}
           </div>
         </div>
       </div>
       <div className="post">
         <Post userId={user.id} />
-      </div>
+      </div></>
+      }
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate}/>}
     </div>
   );
 };

@@ -65,7 +65,7 @@ const Login = () => {
             <button onClick={handleLogin}>Log in</button>
             <span>Fogot password ?</span>
             <div className="or">or</div>
-            <img src="assests/google.png" alt="" srcset="" />
+            <img src="/assests/google.png" alt="" srcset="" />
             <div>
               Don’t have an account ?
               <Link to="/register" style={{ textDecoration: "none" }}>

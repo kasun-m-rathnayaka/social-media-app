@@ -20,7 +20,7 @@ const NavBar = () => {
     <div className="navBar">
       <div className="left">
         <Link to={"/"}>
-          <img src="assests/logo.png" />
+          <img src="/assests/logo.png" />
         </Link>
 
         {darkMode ? (
@@ -42,7 +42,7 @@ const NavBar = () => {
         <NotificationsRoundedIcon />
         <Link to={"/profile/:" + user.id} style={{ textDecoration: "none" }}>
           <div className="user">
-            <img src={user.profilepic} />
+            <img src={"/upload/"+user.profilepic} />
             <span>{user.name}</span>
           </div>
         </Link>
