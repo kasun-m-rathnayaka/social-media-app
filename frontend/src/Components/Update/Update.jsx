@@ -59,7 +59,6 @@ const Update = ({ setOpenUpdate, user }) => {
 
   return (
     <div className="update">
-      Update
       <span>
         <button
           onClick={(e) => {
@@ -69,11 +68,12 @@ const Update = ({ setOpenUpdate, user }) => {
           X
         </button>
       </span>
+      <div className="topic">Update</div>
       <form>
-        <input type="file" name="" id="" onChange={(e) => setProfile(e.target.files[0])}/>
-        <input type="file" name="" id="" onChange={(e) => setCover(e.target.files[0])}/>
-        <input type="text" name="name" id="" onChange={handleChange} />
-        <input type="text" name="dsc" id="" onChange={handleChange} />
+        Add new profile image<input type="file" name="" id="" onChange={(e) => setProfile(e.target.files[0])}/>
+        Add new cover image <input type="file" name="" id="" onChange={(e) => setCover(e.target.files[0])}/>
+        <input type="text" placeholder="New Name" name="name" id="" onChange={handleChange} />
+        <input type="text" placeholder="New Description" name="dsc" id="" onChange={handleChange} />
         <button onClick={handleUpdate}>Update</button>
       </form>
     </div>
