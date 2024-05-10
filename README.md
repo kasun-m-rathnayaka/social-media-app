@@ -28,12 +28,14 @@ To get started with this project, follow these steps:
 2. install dependencies:
    ```bash
    cd social-media-app
+   cd frontend
    npm install
    
 3. Set up the database:
 Create a SQL database and import the provided SQL schema.
 Configure the database connection in the backend (in a .env file or directly in the code).
 ```bash
+cd social-media-app
 cd backend
 npm start
 ```
