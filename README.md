@@ -37,7 +37,7 @@ Configure the database connection in the backend (in a .env file or directly in 
 ```bash
 cd social-media-app
 cd backend
-npm start
+npm install
 ```
 4. Run the application frontend:
 ```bash
