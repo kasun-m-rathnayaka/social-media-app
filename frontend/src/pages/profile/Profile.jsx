@@ -23,31 +23,31 @@ const Profile = () => {
         }),
   });
 
-  // console.log("upload/" +user.profilepic)
+  // console.log(data)
 
   return (
     <div className="profile">
       {isPending ? (<div>Loading</div>) : 
       <>
       <div className="images">
-        <img src={"/upload/" +user.coverpic} alt="" className="cover" />
-        <img src={"/upload/" +user.profilepic} alt="" className="profilePic" />
+        <img src={"/upload/" +data.coverpic} alt="" className="cover" />
+        <img src={"/upload/" +data.profilepic} alt="" className="profilePic" />
       </div>
       <div className="profileContainer">
         <div className="uInfo">
           <div className="center">
             <div className="info"></div>
-            <span>{user.name}</span>
-            <div className="desc">{user.desc}</div>
-            {data && data.id == user.id ? (<button onClick={(e)=>setOpenUpdate(!openUpdate)}>Update</button>): <button>follow</button>}
+            <span>{data.name}</span>
+            <div className="desc">{data.desc}</div>
+            {data && data.id == data.id ? (<button onClick={(e)=>setOpenUpdate(!openUpdate)}>Update</button>): <button>follow</button>}
           </div>
         </div>
       </div>
       <div className="post">
-        <Post userId={user.id} />
+        <Post userId={data.id} />
       </div></>
       }
-      {openUpdate && <Update setOpenUpdate={setOpenUpdate}/>}
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data}/>}
     </div>
   );
 };

@@ -10,3 +10,18 @@ export const getUser = (req, res) => {
         return res.json(info)        
     })
 }
+
+export const updateUser = (req, res) => {
+    const q = "UPDATE users SET  name = ?, dsc = ?, coverpic = ?, profilepic = ? WHERE id = ?"
+
+    connection.query(q,[
+        req.body.name,
+        req.body.dsc,
+        req.body.coverpic,
+        req.body.profilepic,
+        req.body.user.id,
+    ],(error,data)=>{
+        if (error) return res.status(500).json(error)
+        if(data.affectedRows > 0) return res.json("Updated")        
+    })
+}
